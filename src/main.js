@@ -43,9 +43,9 @@ import '@/mock/mockServer'
 import 'swiper/css/swiper.css'
 // 引入api为文件夹里面全部请求函数
 import * as API from '@/api'
-
-// 引入表单检验插件
+// 引入vee-validate
 import '@/plugins/validate'
+
 new Vue({
   render: h => h(App),
   // 全局事件总线

@@ -216,7 +216,7 @@ export default {
         position: absolute;
         right: 0;
         bottom: 0;
-        background: url(./images/choosed.png) no-repeat;
+        background: url(@/assets/images/pages/Trade/choosed.png) no-repeat;
       }
 
       .username.selected {

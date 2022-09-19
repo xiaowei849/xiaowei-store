@@ -1,35 +1,19 @@
-// 引入一级路由组件
-import Home from '@/pages/Home'
-import Login from '@/pages/Login'
-import Register from '@/pages/Register'
-import Search from '@/pages/Search'
-import Detail from "@/pages/Detail"
-import AddCartSuccess from '@/pages/AddCartSuccess'
-import ShopCart from '@/pages/ShopCart'
-import Trade from '@/pages/Trade'
-import Pay from '@/pages/Pay'
-import PaySuccess from '@/pages/PaySuccess'
-import Center from '@/pages/Center'
-// 引入二级路由组件
-import MyOrder from '@/pages/Center/MyOrder'
-import GroudOrder from '@/pages/Center/GroupOrder'
-
 // 路由配置信息
 export default [
     // 个人中心
     {
         path: '/center',
         name: 'center',
-        component: Center,
+        component: () => import('@/pages/Center'),
         meta: { show: true },
         children: [
             {
                 path: 'myorder',
-                component: MyOrder,
+                component: () => import('@/pages/Center/MyOrder'),
             },
             {
                 path: 'groudorder',
-                component: GroudOrder,
+                component: () => import('@/pages/Center/GroupOrder'),
             },
             {
                 path: '/center',
@@ -41,7 +25,7 @@ export default [
     {
         path: '/paysuccess',
         name: 'paysuccess',
-        component: PaySuccess,
+        component: () => import('@/pages/PaySuccess'),
         meta: { show: true },
         // 路由独享守卫
         beforeEnter: (to, from, next) => {
@@ -57,7 +41,7 @@ export default [
     {
         path: '/pay',
         name: 'pay',
-        component: Pay,
+        component: () => import('@/pages/Pay'),
         meta: { show: true },
         // 路由独享守卫
         beforeEnter: (to, from, next) => {
@@ -73,7 +57,7 @@ export default [
     {
         path: '/trade',
         name: 'trade',
-        component: Trade,
+        component: () => import('@/pages/Trade'),
         meta: { show: true },
         // 路由独享守卫
         beforeEnter: (to, from, next) => {
@@ -89,45 +73,45 @@ export default [
     {
         path: '/shopcart',
         name: 'shopcart',
-        component: ShopCart,
+        component: () => import('@/pages/ShopCart'),
         meta: { show: true }
     },
     // 添加购物车成功
     {
         path: '/addcartsuccess',
         name: 'addcartsuccess',
-        component: AddCartSuccess,
+        component: () => import('@/pages/AddCartSuccess'),
         meta: { show: true }
     },
     // 首页
     {
         path: '/home',
-        component: Home,
+        component: () => import("@/pages/Home"),
         meta: { show: true }
     },
     // 搜索
     {
         path: '/search/:keyword?',
-        component: Search,
+        component: () => import('@/pages/Search'),
         name: 'search',
         meta: { show: true },
     },
     // 登录
     {
         path: '/login',
-        component: Login,
+        component: () => import('@/pages/Login'),
         meta: { show: false }
     },
     // 注册
     {
         path: '/register',
-        component: Register,
+        component: () => import('@/pages/Register'),
         meta: { show: false }
     },
     // 详情
     {
         path: '/detail/:skuId',
-        component: Detail,
+        component: () => import('@/pages/Detail'),
         meta: { show: true }
     }
     ,

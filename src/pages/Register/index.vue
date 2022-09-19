@@ -65,13 +65,13 @@
       <div class="controls">
         <input
           type="checkbox"
-          v-model="isChecked"
-          name="isChecked"
+          v-model="agree"
+          name="agree"
           v-validate="{ required: true, tongyi: true }"
-          :class="{ invalid: errors.has('isChecked') }"
+          :class="{ invalid: errors.has('agree') }"
         />
         <span>同意协议并注册《小伟商城用户协议》</span>
-        <span class="error-msg">{{ errors.first("isChecked") }}</span>
+        <span class="error-msg">{{ errors.first("agree") }}</span>
       </div>
       <div class="btn">
         <button @click="userRegister">注册</button>
@@ -106,25 +106,29 @@ export default {
       code: "",
       password: "",
       password1: "",
-      isChecked: true,
+      agree: true,
     };
   },
   methods: {
     // 获取验证码
     async getCode() {
       const { phone } = this;
-      try {
-        // 派发action
-        phone && (await this.$store.dispatch("getCode", phone));
-        this.code = this.$store.state.user.code;
-      } catch (error) {
-        alert(error.message);
+      if (phone) {
+        try {
+          // 派发action
+          await this.$store.dispatch("getCode", phone);
+          this.code = this.$store.state.user.code;
+        } catch (error) {
+          alert(error.message);
+        }
+      } else {
+        alert("请先输入手机号再获取验证码！");
       }
     },
     // 完成注册
     async userRegister() {
-      const { phone, code, password } = this;
-      let success = await this.$validator.validateAll()
+      const { phone, code, password, password1 } = this;
+      let success = await this.$validator.validateAll();
       if (success) {
         try {
           await this.$store.dispatch("userRegister", { phone, code, password });
@@ -133,7 +137,7 @@ export default {
           alert(error.message);
         }
       } else {
-        alert('请先完成信息填写再点击注册！')
+        alert("请先完成信息填写再点击注册！");
       }
     },
   },

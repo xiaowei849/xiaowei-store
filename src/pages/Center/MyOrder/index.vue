@@ -30,7 +30,7 @@
                 <span class="ordertitle"
                   >{{ order.createTime }} 订单编号：{{ order.outTradeNo }}
                   <span class="pull-right delete"
-                    ><img src="../images/delete.png" /></span
+                    ><img src="@/assets/images/pages/Center/MyOrder/delete.png" /></span
                 ></span>
               </th>
             </tr>
@@ -103,7 +103,7 @@
       <ul class="like-list">
         <li class="likeItem">
           <div class="p-img">
-            <img src="../images/itemlike01.png" />
+            <img src="@/assets/images/pages/Center/MyOrder//itemlike01.png" />
           </div>
           <div class="attr">
             <em>DELL戴尔Ins 15MR-7528SS 15英寸 银色 笔记本</em>
@@ -116,7 +116,7 @@
         </li>
         <li class="likeItem">
           <div class="p-img">
-            <img src="../images/itemlike02.png" />
+            <img src="@/assets/images/pages/Center/MyOrder//itemlike02.png" />
           </div>
           <div class="attr">Apple苹果iPhone 6s/6s Plus 16G 64G 128G</div>
           <div class="price">
@@ -127,7 +127,7 @@
         </li>
         <li class="likeItem">
           <div class="p-img">
-            <img src="../images/itemlike03.png" />
+            <img src="@/assets/images/pages/Center/MyOrder//itemlike03.png" />
           </div>
           <div class="attr">DELL戴尔Ins 15MR-7528SS 15英寸 银色 笔记本</div>
           <div class="price">
@@ -138,7 +138,7 @@
         </li>
         <li class="likeItem">
           <div class="p-img">
-            <img src="../images/itemlike04.png" />
+            <img src="@/assets/images/pages/Center/MyOrder//itemlike04.png" />
           </div>
           <div class="attr">DELL戴尔Ins 15MR-7528SS 15英寸 银色 笔记本</div>
           <div class="price">
@@ -176,9 +176,9 @@ export default {
     },
     // 获取当前页面
     getPageNo(page) {
-      this.page = page
-      this.getData()
-    }
+      this.page = page;
+      this.getData();
+    },
   },
 };
 </script>
