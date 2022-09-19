@@ -10,6 +10,7 @@ const mutations = {
     GETADDRESSINFO(state, address) {
         state.address = address
     },
+    // 购物清单
     GETORDERINFO(state, order) {
         state.order = order
     }

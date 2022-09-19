@@ -53,22 +53,21 @@ router.beforeEach(async (to, from, next) => {
     // to 要跳转的那个路由信息
     // from 从哪个路由来的信息
     // next 放行函数
-    next()
     // token存在代表已经登录，登录后限制跳转注册和登录页面
     let token = store.state.user.token
     let name = store.state.user.userInfo.name
     if (token) {
-        if(to.path == '/login' || to.path == '/register') {
+        if (to.path == '/login' || to.path == '/register') {
             next('/home')
         } else {
             if (name) {
                 next()
             } else {
                 // 没有用户信息，派发action让仓库存储信息再跳转
-                try{
+                try {
                     await store.dispatch('getUserInfo')
                     next()
-                } catch(error) {
+                } catch (error) {
                     // token失效，获取不到用户信息
                     await store.dispatch('userLogout')
                     next('/login')
@@ -76,7 +75,13 @@ router.beforeEach(async (to, from, next) => {
             }
         }
     } else {
-        next()
+        let toPath = to.path
+        if (toPath.includes('trade') || toPath.includes('pay') || toPath.includes('center')){
+            next('/login?to=' + toPath)
+        }else {
+            // 不是上面的话放行
+            next()
+        }
     }
 })
 
