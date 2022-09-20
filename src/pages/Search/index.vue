@@ -15,16 +15,16 @@
             <!-- 分类的面包屑 -->
             <li class="with-x" v-if="searchParams.categoryName">
               {{ searchParams.categoryName
-              }}<i @click="removeCategoryName">×</i>
+              }}<i @click="removeCategoryName">x</i>
             </li>
             <!-- 关键词面包屑 -->
             <li class="with-x" v-if="searchParams.keyword">
-              {{ searchParams.keyword }}<i @click="removeKeyword">×</i>
+              {{ searchParams.keyword }}<i @click="removeKeyword">x</i>
             </li>
             <!-- 品牌面包屑 -->
             <li class="with-x" v-if="searchParams.trademark">
               {{ searchParams.trademark.split(":")[1]
-              }}<i @click="removeTrademark">×</i>
+              }}<i @click="removeTrademark">x</i>
             </li>
             <!-- 售卖属性面包屑 -->
             <li
@@ -32,7 +32,7 @@
               v-for="(attrValue, index) in searchParams.props"
               :key="index"
             >
-              {{ attrValue.split(":")[1] }}<i @click="removeAttr(index)">×</i>
+              {{ attrValue.split(":")[1] }}<i @click="removeAttr(index)">x</i>
             </li>
           </ul>
         </div>
@@ -83,9 +83,9 @@
               >
                 <div class="list-wrap">
                   <div class="p-img">
-                    <router-link :to="`/detail/${good.id}`">
-                      <img :src="good.defaultImg" />
-                    </router-link>
+                    <a href="javascript:;" @click="toDetail(good)">
+                      <img v-lazy="good.defaultImg" />
+                    </a>
                   </div>
                   <div class="price">
                     <strong>
@@ -245,6 +245,11 @@ export default {
     getPageNo(pageNo) {
       this.searchParams.pageNo = pageNo;
       this.getData();
+    },
+    // 进入商品详情
+    toDetail(good) {
+      if (good.price > 0) this.$router.push(`/detail/${good.id}`);
+      else alert("当前商品状态不正常，请选择正常的商品");
     },
   },
   computed: {

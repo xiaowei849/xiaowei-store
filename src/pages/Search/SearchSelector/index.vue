@@ -14,10 +14,6 @@
           </li>
         </ul>
       </div>
-      <div class="ext">
-        <a class="sui-btn">多选</a>
-        <a>更多</a>
-      </div>
     </div>
     <!-- 平台售卖属性 -->
     <div

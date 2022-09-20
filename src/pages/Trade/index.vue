@@ -42,7 +42,7 @@
           :key="order.skuId"
         >
           <li>
-            <img :src="order.imgUrl" />
+            <img v-lazy="order.imgUrl" />
           </li>
           <li>
             <p>{{ order.skuName }}</p>

@@ -42,6 +42,7 @@ VueRouter.prototype.replace = function (location, resolve, reject) {
 // 配置路由
 let router = new VueRouter({
     // 配置路由
+    mode: 'hash',
     routes,
     scrollBehavior() {
         return { y: 0 }
@@ -76,9 +77,9 @@ router.beforeEach(async (to, from, next) => {
         }
     } else {
         let toPath = to.path
-        if (toPath.includes('trade') || toPath.includes('pay') || toPath.includes('center')){
+        if (toPath.includes('trade') || toPath.includes('pay') || toPath.includes('center')) {
             next('/login?to=' + toPath)
-        }else {
+        } else {
             // 不是上面的话放行
             next()
         }

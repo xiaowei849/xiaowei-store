@@ -39,7 +39,7 @@
             <tr v-for="(item, index) in order.orderDetailList" :key="item.is">
               <td width="60%">
                 <div class="typographic">
-                  <img :src="item.imgUrl" />
+                  <img v-lazy="item.imgUrl" />
                   <a href="#" class="block-text">{{ item.skuName }}</a>
                   <span>x{{ item.skuNum }}</span>
                   <a href="#" class="service">售后申请</a>

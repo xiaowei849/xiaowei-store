@@ -19,14 +19,13 @@
           </p>
         </div>
         <div class="typeList">
-          <router-link to="/center">我的订单</router-link>
+          <router-link to="/center">个人中心</router-link>
           <router-link to="/shopcart">我的购物车</router-link>
-          <a href="###">个人中心</a>
-          <a href="###">商城会员</a>
-          <a href="###">企业采购</a>
-          <a href="###">关注小伟商城</a>
-          <a href="###">合作招商</a>
-          <a href="###">商家后台</a>
+          <a href="javascript:alert('功能待完善')">商城会员</a>
+          <a href="javascript:alert('功能待完善')">企业采购</a>
+          <a href="javascript:alert('功能待完善')">关注小伟商城</a>
+          <a href="javascript:alert('功能待完善')">合作招商</a>
+          <a href="javascript:alert('功能待完善')">商家后台</a>
         </div>
       </div>
     </div>
@@ -41,7 +40,7 @@
         </router-link>
       </h1>
       <div class="searchArea">
-        <form action="###" class="searchForm">
+        <form class="searchForm">
           <input
             type="text"
             id="autocomplete"

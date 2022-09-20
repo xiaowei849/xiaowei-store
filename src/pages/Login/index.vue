@@ -6,10 +6,12 @@
         <div class="loginform">
           <ul class="tab clearFix">
             <li>
-              <a href="##" style="border-right: 0">扫描登录</a>
+              <a href="javascript:alert('功能待完善');" style="border-right: 0"
+                >扫描登录</a
+              >
             </li>
             <li>
-              <a href="##" class="current">账户登录</a>
+              <a href="javascript:;" class="current">账户登录</a>
             </li>
           </ul>
 
@@ -36,7 +38,9 @@
                   <input name="m1" type="checkbox" value="2" checked="" />
                   自动登录
                 </label>
-                <span class="forget">忘记密码？</span>
+                <a href="javascript:alert('功能待完善');" class="forget"
+                  >忘记密码？</a
+                >
               </div>
               <button class="btn" @click.prevent="userLogin">
                 登&nbsp;&nbsp;录
@@ -45,10 +49,26 @@
 
             <div class="call clearFix">
               <ul>
-                <li><img src="@/assets/images/pages/Login/qq.png" alt="" /></li>
-                <li><img src="@/assets/images/pages/Login/sina.png" alt="" /></li>
-                <li><img src="@/assets/images/pages/Login/ali.png" alt="" /></li>
-                <li><img src="@/assets/images/pages/Login/weixin.png" alt="" /></li>
+                <li>
+                  <a href="javascript:alert('功能待完善');"
+                    ><img src="@/assets/images/pages/Login/qq.png"
+                  /></a>
+                </li>
+                <li>
+                  <a href="javascript:alert('功能待完善');"
+                    ><img src="@/assets/images/pages/Login/sina.png"
+                  /></a>
+                </li>
+                <li>
+                  <a href="javascript:alert('功能待完善');"
+                    ><img src="@/assets/images/pages/Login/ali.png"
+                  /></a>
+                </li>
+                <li>
+                  <a href="javascript:alert('功能待完善');"
+                    ><img src="@/assets/images/pages/Login/weixin.png"
+                  /></a>
+                </li>
               </ul>
               <router-link class="register" to="/register"
                 >立即注册</router-link

@@ -2,19 +2,19 @@
   <div class="rank">
     <div class="tab">
       <div class="tab-tit clearfix">
-        <a href="javascript:;" class="on">
+        <a href="javascript:alert('功能待完善')" class="on">
           <p class="img">
             <i></i>
           </p>
           <p class="text">热卖排行</p>
         </a>
-        <a href="javascript:;">
+        <a href="javascript:alert('功能待完善')">
           <p class="img">
             <i></i>
           </p>
           <p class="text">特价排行</p>
         </a>
-        <a href="javascript:;">
+        <a href="javascript:alert('功能待完善')">
           <p class="img">
             <i></i>
           </p>

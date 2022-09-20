@@ -6,7 +6,7 @@
     </button>
     <button
       v-if="startNumAndEndNum.start > 1"
-      @click="$emit('getPageNo', pageNo - 1)"
+      @click="$emit('getPageNo', 1)"
       :class="{ active: pageNo == 1 }"
     >
       1

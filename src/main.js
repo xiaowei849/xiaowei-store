@@ -1,5 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
+// 关闭生成环境提示
+Vue.config.productionTip = false
 
 // 三级路由组件，轮播图，分页器
 import TypeNav from '@/components/TypeNav'
@@ -19,22 +21,15 @@ Vue.component(Button.name, Button)
 Vue.prototype.$msgbox = MessageBox;
 Vue.prototype.$alert = MessageBox.alert;
 
-
 // 图片懒加载 引入vue-lazyload
-// import VueLazyload from 'vue-lazyload'
-// const loadimage = require('./assets/loading.gif')
-// const errorimage = require('./assets/error.gif')
-// <img v-lazy="img.src" >
-// Vue.use(VueLazyload, {
-//   preLoad: 1.3,
-//   error: errorimage,
-//   loading: loadimage,
-//   attempt: 1
-// })
+import VueLazyload from 'vue-lazyload'
+Vue.use(VueLazyload, {
+  error: require('@/assets/images/lazyload/no_image.jpg'),
+  loading: require('@/assets/images/lazyload/loading.gif'),
+})
 
 // 引入路由
 import router from '@/router'
-Vue.config.productionTip = false
 // 引入仓库
 import store from '@/store'
 // 引入MockServer.js----mock数据
@@ -53,7 +48,7 @@ new Vue({
     Vue.prototype.$bus = this
     Vue.prototype.$API = API
   },
-  // 注册路由，kv一直省略v，注册路由信息，当书写router的时候，组件身上都有$route, $router
+  // 注册路由，注册路由信息，当书写router的时候，组件身上都有$route, $router
   router,
   // 注册仓库：组件实例的身上都会多出一个属性$store
   store

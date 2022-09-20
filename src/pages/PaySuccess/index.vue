@@ -2,7 +2,11 @@
   <div class="paysuccess">
     <div class="success">
       <h3>
-        <img src="@/assets/images/pages/PaySuccess/right.png" width="48" height="48" />
+        <img
+          src="@/assets/images/pages/PaySuccess/right.png"
+          width="48"
+          height="48"
+        />
         恭喜您，支付成功啦！
       </h3>
       <div class="paydetail">

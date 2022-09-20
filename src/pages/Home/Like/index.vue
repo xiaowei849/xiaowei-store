@@ -3,7 +3,7 @@
     <div class="py-container">
       <div class="title">
         <h3 class="fl">猜你喜欢</h3>
-        <a href="javascript:;" class="fr tip changeBnt">换一换</a>
+        <a href="javascript:alert('功能待完善')" class="fr tip changeBnt">换一换</a>
       </div>
       <div class="bd">
         <ul class="favourate">

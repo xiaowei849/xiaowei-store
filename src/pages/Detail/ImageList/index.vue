@@ -7,7 +7,7 @@
         :key="img.id"
       >
         <img
-          :src="img.imgUrl"
+          v-lazy="img.imgUrl"
           :class="{ active: currentIndex == index }"
           @click="changeIndex(index)"
         />

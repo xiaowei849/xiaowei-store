@@ -6,6 +6,21 @@ const state = {
 }
 const mutations = {
     GETSEARCHLIST(state, searchList) {
+        // 处理不正常商品
+        searchList.goodsList.forEach(good => {
+            if (
+                good.title.length < 5 ||
+                good.price < 10 ||
+                good.price > 50000 ||
+                !good.defaultImg
+            ) {
+                good.price = "0";
+                good.title = "获取标题失败";
+                good.defaultImg = "";
+            }
+        })
+        // 处理不正常的售卖属性
+        searchList.attrsList = searchList.attrsList.filter(item => !parseInt(item.attrName) > 0)
         state.searchList = searchList
     }
 }

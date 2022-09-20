@@ -38,7 +38,7 @@
                 <div class="price">
                   <i>¥</i>
                   <em>{{ skuInfo.price }}</em>
-                  <span>降价通知</span>
+                  <span>&nbsp;&nbsp;&nbsp;降价通知</span>
                 </div>
                 <div class="remark">
                   <i>累计评价</i>
